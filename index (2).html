@@ -1,186 +1,69 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
-<meta Charest="utf-8"/>
-<title>My Javascript Breakout Game</title>
-<style>    * { padding: 0; }               canvas { background:
-#eee; display: block; margin: 0 auto; }
-</style>
+
+<title>My Site that shouldnt be one</title>
+
 </head>
-<body> <canvas id="myCanvas" width="480" height="320"></canvas>
-<script>
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
-var ballRadius = 10;
-var x = canvas.width/2;
-var y = canvas.height-30;
-var dx = 2;
-var dy = -2;
-var paddleHeight =10;
-var paddleWidth =75;
-var paddleX = (canvas.width-paddleWidth)/2;
-var rightPressed = false;
-var leftPressed = false;
-var brickRowCount = 5;
-var brickColumnCount = 3;
-var brickWidth = 75;
-var brickHeight = 20;
-var brickPadding =10;
-var brickOffsetTop = 30;
-var brickOffsetLeft = 30;
-var score = 0;
-var lives = 3;
-var bricks = [];
-for(var c=0; c<brickColumnCount; c++) {
-bricks[c] = [];
-  for(var r=0; r<brickRowCount; r++) {
-     bricks[c][r] = { x: 0, y: 0, status: 1};
-  }
-}
 
-document.addEventListener("keydown", keyDownHandler,
-false);
-document.addEventListener("keyup", keyUpHandler, false);
-document.addEventListener("mousemove", mouseMoveHandler,
-false);
+<body>
 
-function keyDownHandler(e) {
-      if(e.key == "right" || e.key == "ArrowRight") {
-	  rightPressed = true;
-      }
-      else if(e.key == "Left" || e.key == "ArrowLeft") {
-	  leftPressed = true;
-      }
-}
+<h1>Welcome to my website. Where reality leaves you!!!</h>
 
-function keyUpHandler(e) {
-   if(e.key == "Right" || e.key == "ArrowRight") {
-       rightPressed = true;
-   }
-   else if(e.key == "Left" || e.key == "ArrowLeft") {
-       leftPressed = false;
-   }
-}
-function mouseMoveHandler(e) {
-  var relativeX = e.clientX - canvas.offsetLeft;
-  if(relativeX > 0 && relativeX < canvas.width) {
-    paddleX = relativeX - paddleWidth/2;
-  }
-}
-function collisionDetection() {
-  for(var c=0; c<brickColumnCount; c++) {
-    for(var r=0; r<brickRowCount; r++) {
-      var b = bricks[c][r];
-      if(b.status == 1) {
-        if(x > b.x && x < b.x+brickWidth && y > b.y && y
-< b.y+brickHeight) {
-	  dy = -dy;
-	  b.status = 0;
-	  score++;
-	  if(score == brickRowCount*brickColumnCount) {
-	    alert("YOU WIN, CONGRATS!");
-	    document.location.reload();
-	  }
-	}
-      }
-    }
-  }
-}
-
-function drawBall() {
-  ctx.beginPath();
-  ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-  ctx.fillStyle = "0095DD";
-  ctx.fill();
-  ctx.closePath();
-}
-function drawPaddle() {
-  ctx.beginPath();
-  ctx.rect(paddleX, canvas.height-paddleHeight,
-paddleWidth, paddleHeight);
-  ctx.fillStyle = "#0095DD";
-  ctx.fill();
-  ctx.closePath();
-}
-function drawBricks() {
-  for(var c=0; c<brickColumnCount; c++) {
-    for(var r=0; r<brickRowCount; r++) {
-      if(bricks[c][r].status == 1) {
-	var brickX =
-(r*(brickWidth+brickPadding))+brickOffsetLeft;
-	var brickY =
-(c*(brickHeight+brickPadding))+brickOffsetTop;
-	bricks[c][r].x = brickX;
-	bricks[c][r].y = brickY;
-	ctx.beginPath();
-	ctx.rect(brickX, brickY, brickWidth,
-brickHeight);
-	ctx.fillStyle = "0095DD";
-	ctx.fill();
-	ctx.closePath();
-      }
-    }
-  }
-}
-function drawScore() {
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#0095DD";
-  ctx.fillText("Score: "+score, 8, 20);
-}
-function drawLives() {
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "0095DD";
-  ctx.fillText("Lives: "+lives, canvas.width-65, 20);
-}
-
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawBricks();
-  drawBall();
-  drawPaddle();
-  drawScore();
-  drawLives();
-  collisionDetection();
-
-  if(x + dx > canvas.width-ballRadius || x + dx <
-ballRadius) {
-    dx = -dx;
-  }
-  if(y + dy < ballRadius) {
-    dy = -dy;
-}
-else if(y + dy > canvas.height-ballRadius) {
-  if(x > paddleX && x < paddleX + paddleWidth) {
-    dy = -dy;
-  }
-  else {
-    lives--;
-    if(!lives) {
-      alert("GAME OVER");
-      document.location.reload();
-    }
-    else {
-      x = canvas.width/2;
-      y = canvas.height-30;
-      dx = 3;
-      dy = -3;
-      paddleX = (canvas.width-paddleWidth)/2;
-     }
-   }
- }
-
- if(rightPressed && paddleX < canvas.width-paddleWidth)
-{
-   paddleX += 7;
- }
- else if(leftPressed && paddleX > 0) {
-   paddleX -= 7;
- }
- x += dx;
- y += dy;
- requestAnimationFrame(draw);
-}
-draw();
-</script>
+<p>My question is how you got to this webiste. This website has information about a surtain player in Video Games.</p>
+<p>Your still here? Who in the world would want to read information about a video game player??? You can leave if you want to because its not that interesting.</P>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<p>Your still here? Huh well alright i guess you can look. But agian i tell you that its not interesting.</p>
+ 
+<br />
+<p>In the famous world of Video Games there is a player whos name is Mythman0323!!! He is a very skilled player any game that you give him in a few minutes he will find out a way to really destroy everything because he is so skilled. He rarly dies. Unless ofcourse he needs to. ;D</p>
+<p> The games that he likes to play are Minecraft, Valheim, Splitgate, Terraria, and really so much more!!!</p>
+<p>He Enjoys playing with his friends 44games and n0Beard0201. He plays with a lot of his friends and they enjoy him to most of the time. ;D</p>
+<p>Welp thats it nothing left just ya know nada</p>
+<p> Just what ever you do dont go to this link</p>
+<p> pls dont im WARNING YOU!! (theres nothing hehehe)</P>
+<a href=”file://oilerydc/UserHome/Tbrooks/Documents/index.html”>DONT HIT ME!</a>
+<a href=”https://digdig.io/”>DONT HIT ME EITHER!</a>
+<br />
+<br />
+<br />
+<p> Well i hoped you enjoyed reading about this very Skilled player, he is greatful for you reading about him on his site. ;D</p>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<p> P.S if you went to the link. Well i told you.</p>
 </body>
+
 </html>
+
