@@ -16,6 +16,34 @@
 div {
   font-family: myFirstFont;
 }
+@font-face {
+  font-family: mySecondFont;
+  src: url(sansation_light.woff);
+}
+
+@font-face {
+  font-family: mySecondFont;
+  src: url(sansation_bold.woff);
+  font-weight: bold;
+}
+
+div {
+  font-family: mySecondFont;
+}
+@font-face {
+  font-family: myThirdFont;
+  src: url(sansation_light.woff);
+}
+
+@font-face {
+  font-family: myThirdFont;
+  src: url(sansation_bold.woff);
+  font-weight: bold;
+}
+
+div {
+  font-family: myThirdFont;
+}
 </style>
 </head>
 <body>
@@ -23,6 +51,7 @@ div {
 <h1>The @font-face Rule</h1>
 
 <div>With CSS, websites can use fonts other than the pre-selected "web-safe" fonts.</div>
-
+<div2>Yes im sooooo coooooool MUAHHAHAHAHA</div2>
+<div>Admit it life would be terrible without me XD</div3>
 </body>
 </html>
