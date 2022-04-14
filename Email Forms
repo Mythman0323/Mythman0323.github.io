@@ -2,16 +2,16 @@
 <html>
 <body>
 
-<h1>Show Email Fields</h1>
+<h1>Shows your emails page</h1>
 
-<h3>Show an email field (allows only one email address):</h3>
+<h3>This Showing email thing shows only one of your inputed emails.:</h3>
 <form action="/action_page.php">
-  <label for="email">Enter your email:</label>
+  <label for="email">Enter one of your emails here:</label>
   <input type="email" id="email" name="email">
   <input type="submit">
 </form>
 
-<h3>Show an email field (allows multiple email addresses). Separate each email address with a comma:</h3>
+<h3>This eamil showing thingy shows multiple emails but you need to add a comma after each one.:</h3>
 <form action="/action_page.php">
   <label for="emails">Enter email addresses:</label>
   <input type="email" id="emails" name="emails" multiple>
